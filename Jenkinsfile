@@ -17,7 +17,9 @@ pipeline {
                 sh '''
                 cd myapp
                 ls -la
-                apt install pip
+                #!/bin/bash
+                echo $PATH
+                echo $HOME
                 pip3 install -r requirements.txt
                 '''
             }
