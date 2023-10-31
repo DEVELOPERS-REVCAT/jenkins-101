@@ -1,7 +1,7 @@
 pipeline { 
     agent {        
         docker { 
-            image 'python:3.9' // Specify the Docker image
+            image 'python:3' // Specify the Docker image
             label 'docker-agent-python'            
         }
     }
