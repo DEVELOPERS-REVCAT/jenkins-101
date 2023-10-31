@@ -7,14 +7,10 @@ pipeline {
     triggers {
         pollSCM '* * * * *'
     }
-    stages {
-       stage('Set PATH') {
-            steps {
-                sh """
-                export PATH=/usr/bin:$PATH
-                """
-            }
-        }
+     environment {
+        PATH = "/usr/bin:$PATH"  // Add /usr/bin to the PATH
+    }
+    stages { 
         stage('Build') {
             steps {
                 echo "Building.."
