@@ -2,7 +2,7 @@ pipeline {
     agent {        
         docker { 
             image 'python:3.9' // Specify the Docker image
-            label 'docker-agent-python && linux'            
+            label 'docker-agent-python'            
         }
     }
     triggers {
