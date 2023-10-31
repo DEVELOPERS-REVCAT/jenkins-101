@@ -1,5 +1,5 @@
 pipeline { 
-    aagent {
+    agent {
         label 'docker-agent-python' // Specify the label
         docker { 
             image 'python:3' // Specify the Docker image
