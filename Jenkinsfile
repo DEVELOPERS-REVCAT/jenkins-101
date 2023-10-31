@@ -16,6 +16,8 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
+                ls -la
+                sudo apt install pip
                 pip3 install -r requirements.txt
                 '''
             }
