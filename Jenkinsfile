@@ -14,16 +14,20 @@ pipeline {
     stages { 
         stage('Build') {
             steps {
-                echo "Building.."
-                sh '''
-                cd myapp
-                ls -la
-                #!/bin/bash
-                echo $PATH
-                echo $HOME
-                /usr/bin/pip3 install -r requirements.txt
-                '''
-            }
+                
+                withPythonEnv('/usr/bin/python3.9') {
+                    sh 'echo "Job is starting" '
+                    echo "Building.."
+                    sh '''
+                    cd myapp
+                    ls -la
+                    #!/bin/bash
+                    echo $PATH
+                    echo $HOME
+                    /usr/bin/pip3 install -r requirements.txt
+                    '''    
+                }    
+            }            
         }
         stage('Test') {
             steps {
