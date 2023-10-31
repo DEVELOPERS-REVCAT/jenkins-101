@@ -8,13 +8,10 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Install Dependencies') {
+       stage('Set PATH') {
             steps {
                 sh """
-                cd myapp
-                python3 -m venv venv
-                source venv/bin/activate
-                pip install -r requirements.txt
+                export PATH=/usr/bin:$PATH
                 """
             }
         }
