@@ -24,7 +24,7 @@ pipeline {
                     #!/bin/bash
                     echo $PATH
                     echo $HOME
-                    /usr/bin/pip3 install -r requirements.txt
+                    pip3 install -r requirements.txt
                     '''    
                 }    
             }            
