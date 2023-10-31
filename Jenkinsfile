@@ -1,9 +1,4 @@
-pipeline {
-    agent { 
-        node {
-            label 'docker-agent-python'
-            }
-      }
+pipeline { 
     agent {
         docker { image 'python:3' }
     }
